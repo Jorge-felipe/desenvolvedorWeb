@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Escolha o seu estado abaixo:</h1>
+    </header>
+    <select name="Estados" id="estados">
+        <optgroup label="Sudeste">
+        <option value="RJ">Rio de Janeiro</option>
+        <option value="SP">São Paulo</option>
+        <option value="MG">Minas Gerais</option>
+    </optgroup>
+        <optgroup label="Nordeste"></optgroup>
+        <option value="ES">Espirito Santos</option>
+        <option value="RS">Rio Grande do Sul</option>
+    </select>
+    <input type="hidden" name="ID" value="1">
+    <div>
+        <label for="Senha">Senha</label>
+    <input type="password" name="senha" id="senha" autofocus>
+    </div>
+
+    <input type="month">
+    <input type="time">
+    <input type="week">
+    
+   
+        <input type="text" list="navegadores">
+        <datalist id="navegadores">
+            <option value="Firefox"></option>
+            <option value="Chrome"></option>
+            <option value="Edge"></option>
+        </datalist>
+                <input type="text" tabindex="4">
+                <input type="text" tabindex="3">
+                <input type="text" tabindex="2" readonly>
+                <input type="text" autofocus tabindex="1" disabled>
+                <input type="button" value="Aceito" readonly>
+
+</body>
+</html>
