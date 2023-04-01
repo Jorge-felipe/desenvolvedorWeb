@@ -353,7 +353,7 @@ footer .row p{
     line-height: 69px;
     margin-bottom: 0;
 }
-footer .col-red{
+.col-red{
     background-color: red 2px solid;
     height: 200px;
 }
