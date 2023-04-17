@@ -467,6 +467,8 @@ font-size:8em;
 }
 /* Adicionando classe ativo - JS */
 #menu li.search input:focus{
-    width: 300px; 
-    
+    width: 300px;
+}
+#btn-play-pause{
+    margin: auto;
 }

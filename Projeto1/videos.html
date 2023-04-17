@@ -7,6 +7,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Orlando City</title>
     <link rel="stylesheet" href="lib/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://cdn.plyr.io/3.7.8/plyr.css">
     <link rel="stylesheet" href="lib/owl-carousel/owl-carousel/owl.carousel.css">
     <link rel="stylesheet" href="lib/owl-carousel/owl-carousel/owl.theme.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.10.2/font/bootstrap-icons.css"
@@ -79,15 +80,91 @@
         <div id="call-to-action">
             <div class="container">
                 /
-            <div classe=" row text-center">
-                <h2>Videos</h2>
-                <hr>
-            </div>
-            <div class="row">
-                <video src="mp4/highlights.mp4" controls></video>
-            </div>
+                <div class=" row text-center">
+                    <h2>Videos</h2>
+                    <hr>
+                </div>
+                <div class="row">
+                    <div class="player">
+                        <video controls poster="png/hi2.jpg">
+                    </div>
+                    <source src="mp4/Orlando.mp4" type="video/mp4">
+                    </video>
+
+                    <input type="range" id="volume" min="0" max="1" step="0.01" value="1">
+                    <button type="button" id="btn-play-pause" class="btn btn-success">PLAY</button>
+                </div>
             </div>
         </div>
+        <div id="news" class="container">
+            <div class="row text-center">
+                <hr>
+            </div>
+
+            <div class="row thumbnails owl-carousel owl-theme">
+                <div class="item" data-video="mp4/highlights">
+                    <div class="item-inner">
+                        <img src="png/hi.jpg" alt="noticia-thumb">
+                        <h3>Highlights</h3>
+
+                    </div>
+                </div>
+                <div class="item" data-video="mp4/orlando">
+                    <div class="item-inner">
+                        <img src="png/hi2.jpg" alt="noticia-thumb">
+                        <h3>Highlights</h3>
+                    </div>
+
+                </div>
+                <div class="item" data-video="mp4/highlights">
+                    <div class="item-inner">
+                        <img src="png/hi.jpg" alt="noticia-thumb">
+                        <h3>Highlights</h3>
+
+                    </div>
+                </div>
+                <div class="item" data-video="mp4/orlando">
+                    <div class="item-inner">
+                        <img src="png/hi2.jpg" alt="noticia-thumb">
+                        <h3>Highlights</h3>
+
+                    </div>
+                </div>
+                <div class="item" data-video="mp4/highlights">
+                    <div class="item-inner">
+                        <img src="png/hi.jpg" alt="noticia-thumb">
+                        <h3>Highlights</h3>
+
+                    </div>
+                </div>
+                <div class="item" data-video="mp4/orlando">
+                    <div class="item-inner">
+                        <img src="png/hi2.jpg" alt="noticia-thumb">
+                        <h3>Highlights</h3>
+
+                    </div>
+                </div>
+                <div class="item" data-video="mp4/highlights">
+                    <div class="item-inner">
+                        <img src="png/hi.jpg" alt="noticia-thumb">
+                        <h3>Highlights</h3>
+
+                    </div>
+                </div>
+                <div class="item" data-video="mp4/orlando">
+                    <div class="item-inner">
+                        <img src="png/hi2.jpg" alt="noticia-thumb">
+                        <h3>Highlights</h3>
+
+                    </div>
+                </div>
+
+
+            </div>
+        </div>
+        </div>
+        </div>
+
     </section>
 
     <footer>
@@ -164,81 +241,55 @@
 
     <script src="lib/bootstrap/js/bootstrap.min.js"></script>
     <script src="lib/jquery/jquery.min.js.js"></script>
+    <script src="lib/plyr/dist/plyr.js"></script>
     <script src="lib/owl-carousel/owl-carousel/owl.carousel.min.js"></script>
-
-    <!-- <script>
-        $(document).ready(function(){
-
-            $("#logotipo").on("mouseover",function(){
-                console.log("Passou o mouse no Logotipo!")
-            });
-        });
-    </script> -->
-
-    <!-- <script>
-        $(document).ready(function () {
-            $("#logotipo").on("mouseover", function () {
-                $("#banner h1").css({"color": "red", "font-size": "8em", "transition": "2s"});
-
-
-
-            });
-
-        });
-
-    </script> -->
-
-    <!-- <script>
-        $(document).ready(function(){
-            $("#logotipo").on("mouseover", function(){
-                $("#estatisticas p").css({"color": "red"});
-            });
-        });
-    </script> -->
-    <!-- <script>
-        $(document).ready(function () {
-            $("#logotipo").on("keypress" (1), function () {
-                $("#banner h1").addClass("efeito");
-
-            }).on("keyup" (2), function () {
-                $("#banner h1").removeClass("efeito");
-
-            });
-        });
-    </script> -->
-    <!-- <script>
-        $(document).ready(function () {
-
-            $("#input-search").on("focus", function () {
-                $("li.search").addClass("ativo");
-
-            }).on("blur", function () {
-                $("li.search").removeClass("ativo");
-            });
-
-        });
-    </script> -->
-
+    <script src="js/efeito.js"></script>
     <script>
-        $(".thumbnails").owlCarousel({
-            loop: true,
-            nav: true,
-            navText: ["Anterior", "Próximo"],
-            responsive: {
-                0 :{
-                    item: 1
-                },
-                480:{
-                    item: 3
-                },
-                1000:{
-                    item: 4
-                },
-                
+        (function (d, p) {
+            var a = new XMLHttpRequest(),
+                b = d.body;
+            a.open("GET", p, true);
+            a.send();
+            a.onload = function () {
+                var c = d.createElement("div");
+                c.style.display = "none";
+                c.innerHTML = a.responseText;
+                c.insertBefore(c, b.childNodes[0]);
             }
+        })(document, "lib/plyr/dist/sprite.svg");
+    </script>
+    <script>
+        $(function () {
+            $(".thumbnails .item").on("click", function () {
+                $("video").attr({
+                    "src": "mp4/" + $(this).data('video') + ".mp4",
+                    "poster": "png/" + $(this).data('video') + ".jpg"
+                });
+
+            });
+            $("#volume").on("change", function () {
+
+                $("video")[0].volume = parseFloat($(this).val());
+            });
+            $("#btn-play-pause").on("click", function () {
+
+                var video = $("video")[0];
+
+                if ($(this).hasClass("btn-success")) {
+                    $(this).text("STOP");
+                    video.play();
+                }
+                else {
+                    $(this).text("PLAY");
+                    video.pause();
+                }
+                $(this).toggleClass("btn-success btn-danger");
+            });
+
+            plyr.setup();//Disparando player plyr
+
         });
     </script>
-
 </body>
 
 </html>
